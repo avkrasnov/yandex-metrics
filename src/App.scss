@@ -1,0 +1,50 @@
+#root {
+  min-height: 100vh;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.footer {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+
+  .header-wrap > * {
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  .rangepicker {
+    width: 530px;
+  }
+
+  .robots {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ant-layout-header {
+  background: none;
+}
+
+main {
+  background: white;
+
+  .ant-table-wrapper .ant-table-pagination.ant-pagination {
+    margin-right: 24px;
+  }
+
+  .table-actions {
+    text-align: center;
+    margin-top: 16px;
+  }
+}

@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Flex, Layout } from "antd";
+import './App.scss';
+import { Outlet } from 'react-router-dom';
+import AppHeader from './components/header';
+import AppFooter from './components/footer';
+
+import { ConfigProvider } from 'antd';
+import ruRU from 'antd/locale/ru_RU';
 
 function App() {
+  const { Header, Footer, Content } = Layout;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider locale={ruRU}>
+      <Flex gap="middle" wrap className='full-height'>
+        <Layout>
+          <Header><AppHeader /></Header>
+          <Content><Outlet /></Content>
+          <Footer><AppFooter /></Footer>
+        </Layout>
+      </Flex>
+    </ConfigProvider>
   );
 }
 
